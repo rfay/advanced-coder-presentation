@@ -80,12 +80,6 @@ drupal-core uses amateescu/ddev-drupal-dev; drupal-contrib uses ddev/ddev-drupal
 
 ---
 
-# Drupal Contribution
-
-Replacing Gitpod / DrupalPod
-
----
-
 ## The Drupal Issue Picker
 
 [start.coder.ddev.com/drupal-issue](https://start.coder.ddev.com/drupal-issue)
@@ -103,7 +97,7 @@ Don't click Cancel at "Confirm and Create" — start over in the picker instead.
 
 ---
 
-## Why This Replaces DrupalPod
+## How This Replaces Original DrupalPod
 
 * Hand someone an issue URL, they get a working site with the branch ready
 * Good for contribution days: no local Docker, no setup
@@ -161,7 +155,7 @@ Demo the dashboard. Show the app buttons and the logs tab.
 * Dashboard: **VS Code Desktop** button
   * Opens local VS Code via the Coder extension
 * Or from CLI: `coder open vscode my-site`
-* Or Remote-SSH to host `my-site.coder`
+* Or Remote-SSH to host `coder.my-site`
 * Xdebug works as with local DDEV
 * JetBrains: Toolbox Coder plugin or Gateway over SSH
 
@@ -194,14 +188,14 @@ coder ssh my-site -- ddev list          # one command
 coder ssh -A my-site                    # forward your SSH agent
 
 coder config-ssh --yes                  # write ~/.ssh/config entries
-ssh my-site.coder
-scp dump.sql.gz my-site.coder:~/my-site/
-rsync -av ./files/ my-site.coder:~/my-site/web/sites/default/files/
+ssh coder.my-workspace
+scp dump.sql.gz coder.my-workspace:~/my-site/
+rsync -av ./files/ coder.my-workspace:~/my-site/web/sites/default/files/
 ```
 <!-- .element: style="font-size: 0.45em" -->
 
 Note:
-Host names are `<workspace>.coder`. Re-run `coder config-ssh` after creating new workspaces.
+Host names are `coder.<workspace>`. Re-run `coder config-ssh` after creating new workspaces.
 Port forward: coder port-forward my-site --tcp 3306:32789
 
 ---
@@ -209,7 +203,7 @@ Port forward: coder port-forward my-site --tcp 3306:32789
 ## Example: Import a Database
 
 ```bash
-scp ~/Downloads/dump.sql.gz my-site.coder:~/my-site/
+scp ~/Downloads/dump.sql.gz coder.my-site:~/my-site/
 coder ssh my-site -- env -C /home/coder/my-site \
   ddev import-db --file=dump.sql.gz
 ```
@@ -217,7 +211,7 @@ coder ssh my-site -- env -C /home/coder/my-site \
 And back out:
 
 ```bash
-scp my-site.coder:~/my-site/backup.sql.gz .
+scp coder.my-site:~/my-site/backup.sql.gz .
 ```
 
 ---
@@ -365,9 +359,3 @@ Can't be combined with remote control. Runner rewrites ~/.gitconfig before each 
 * Coder CLI: [coder.com/docs/install](https://coder.com/docs/install)
 * Help: [DDEV Discord](https://ddev.com/s/discord), Drupal Slack `#ddev`
 <!-- .element: style="font-size: 0.75em" -->
-
----
-
-# Questions?
-
-![DDEV Logo](images/ddev-logo.svg)
