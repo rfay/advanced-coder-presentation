@@ -9,6 +9,10 @@ Agenda: what coder.ddev.com is, Drupal contribution flow, ways to get into a wor
 
 ---
 
+## Start the recording!
+
+---
+
 ## What is coder.ddev.com?
 
 * Free, experimental cloud DDEV service built on [Coder](https://coder.com)
