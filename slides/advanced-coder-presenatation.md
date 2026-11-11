@@ -16,9 +16,21 @@ Agenda: what coder.ddev.com is, Drupal contribution flow, ways to get into a wor
 * Ready in about a minute, no local install
 * Sign in with GitHub at [coder.ddev.com](https://coder.ddev.com/login)
 * Start page: [start.coder.ddev.com](https://start.coder.ddev.com)
+* Docs: [docs.coder.ddev.com](https://docs.coder.ddev.com)
 
 Note:
 Experimental: no guarantees of data retention or uptime. Keep work in Git.
+
+---
+
+## WHY coder.ddev.com?
+
+* Original gitpod/drupalpod replacement for contribution
+* External machine, more flexibility, not dependent on laptop
+* Sharing and collaborating with others
+* AI in completely isolated environment
+* Claude can run so many ways
+* Geographical and network issues
 
 ---
 
@@ -27,8 +39,7 @@ Experimental: no guarantees of data retention or uptime. Keep work in Git.
 Sign in with GitHub. You get in if you're a member of:
 
 * An organization that [sponsors DDEV](https://ddev.com/sponsor/) at $100+/month
-  * Whole org can sign in
-* The [ddev](https://github.com/ddev) GitHub org
+  * All members of org can sign in
 
 Otherwise, request access:
 
