@@ -353,6 +353,13 @@ Can't be combined with remote control. Runner rewrites ~/.gitconfig before each 
 
 ---
 
+## Contribution
+
+* Contributing is easy and AI knows how to do it, there are good models to follow and good docs. You can fix an annoyance.
+* The PR build gives you links to the things you need to be able to see the changes in your PR
+
+---
+
 ## Resources
 
 * Start: [start.coder.ddev.com](https://start.coder.ddev.com)
