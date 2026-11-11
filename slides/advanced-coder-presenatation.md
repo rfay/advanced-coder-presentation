@@ -18,8 +18,25 @@ Agenda: what coder.ddev.com is, Drupal contribution flow, ways to get into a wor
 * Start page: [start.coder.ddev.com](https://start.coder.ddev.com)
 
 Note:
-Access: members of the ddev GitHub org, orgs sponsoring DDEV at $100+/month, or individuals approved via github.com/coder-ddev-com/access-requests.
 Experimental: no guarantees of data retention or uptime. Keep work in Git.
+
+---
+
+## Getting Access
+
+Sign in with GitHub. You get in if you're a member of:
+
+* An organization that [sponsors DDEV](https://ddev.com/sponsor/) at $100+/month
+  * Whole org can sign in
+* The [ddev](https://github.com/ddev) GitHub org
+
+Otherwise, request access:
+
+* Open an issue at [github.com/coder-ddev-com/access-requests](https://github.com/coder-ddev-com/access-requests)
+* Include your GitHub username and how you'll use it
+
+Note:
+Once approved you're added to the coder-ddev-com org and can sign in. Coder gets read-only access to email, public profile, and org membership; no code access.
 
 ---
 
@@ -92,7 +109,7 @@ Don't click Cancel at "Confirm and Create" — start over in the picker instead.
 ```bash
 ddev drush uli
 ddev phpunit core/modules/node
-ddev phpcs        # contrib: also phpstan, eslint, stylelint
+ddev phpcs   # also phpstan, eslint
 git push issue HEAD
 ```
 

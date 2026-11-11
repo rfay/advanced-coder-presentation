@@ -105,6 +105,7 @@
     line-height: 1.5;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     width: 100%;
+    box-sizing: border-box;
 }
 
 .reveal pre code {
@@ -500,4 +501,43 @@
 .reveal .slides section:first-child span {
     text-align: center !important;
     display: block;
+}
+
+/* DDEV logo (images/ddev-logo.svg has no intrinsic size) */
+.reveal img[src$="ddev-logo.svg"] {
+    width: 420px;
+    max-width: 80%;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    background: none;
+}
+
+/* Dark mode: follows the OS/browser setting.
+   images/ddev-logo.svg (DDEV's Logo_w_text_auto.svg) switches its text color
+   with the same media query, so logo and page stay in sync. */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --ddev-black: #e1ded8;      /* body text: DDEV light */
+        --ddev-light-gray: #2a2e35; /* inline code / panels */
+        --ddev-light-blue: #16313d; /* blockquotes / callouts */
+        --ddev-gray: #a0a0a0;
+    }
+
+    .reveal-viewport,
+    .reveal {
+        background-color: #1e2127;  /* DDEV dark */
+    }
+
+    .reveal code {
+        border-color: #3a3f47;
+    }
+
+    .reveal blockquote {
+        color: #e1ded8;
+    }
+
+    .reveal a {
+        color: var(--ddev-blue);
+    }
 }
