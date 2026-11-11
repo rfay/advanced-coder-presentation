@@ -33,6 +33,7 @@ Experimental: no guarantees of data retention or uptime. Keep work in Git.
 * External machine, more flexibility, not dependent on laptop
 * Sharing and collaborating with others
 * AI in completely isolated environment
+* Security: It's definitely not going to reconfigure or compromise your laptop
 * Claude can run so many ways
 * Geographical and network issues
 
