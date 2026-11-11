@@ -357,5 +357,5 @@ Can't be combined with remote control. Runner rewrites ~/.gitconfig before each 
 * Announcement: [ddev.com/blog/coder-ddev-com-announcement](https://ddev.com/blog/coder-ddev-com-announcement/)
 * Access requests: [github.com/coder-ddev-com/access-requests](https://github.com/coder-ddev-com/access-requests)
 * Coder CLI: [coder.com/docs/install](https://coder.com/docs/install)
-* Help: [DDEV Discord](https://ddev.com/s/discord), Drupal Slack `#ddev`
+* Help: [DDEV Discord - ddev.com/s/discord](https://ddev.com/s/discord), Drupal Slack `#ddev`
 <!-- .element: style="font-size: 0.75em" -->
