@@ -1,7 +1,7 @@
 {
   "name": "advanced-coder-presentation",
   "version": "1.0.0",
-  "description": "A reveal.js presentation template",
+  "description": "Advanced coder.ddev.com usage presentation",
   "scripts": {
     "start": "five-server --port=8000 --open=/"
   },

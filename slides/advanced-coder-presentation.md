@@ -1,11 +1,11 @@
-# **Advanced Coder.ddev.com Usage**
+# **Advanced coder.ddev.com Usage**
 
 ![DDEV Logo](images/ddev-logo.svg)
 
 Cloud DDEV workspaces in your browser
 
 Note:
-Agenda: what coder.ddev.com is, Drupal contribution flow, ways to get into a workspace, freeform template, Claude Code, resources.
+Agenda: what coder.ddev.com is and why, getting access, Drupal contribution flow, ways to get into a workspace, freeform template, Claude Code, contributing to coder-ddev, resources.
 
 ---
 
@@ -21,30 +21,28 @@ Agenda: what coder.ddev.com is, Drupal contribution flow, ways to get into a wor
 * Sign in with GitHub at [coder.ddev.com](https://coder.ddev.com/login)
 * Start page: [start.coder.ddev.com](https://start.coder.ddev.com)
 * Docs: [docs.coder.ddev.com](https://docs.coder.ddev.com)
+* Idle workspaces are **deleted after 14 days**: keep work in Git
 
 Note:
 Experimental: no guarantees of data retention or uptime. Keep work in Git.
 
 ---
 
-## WHY coder.ddev.com?
+## Why coder.ddev.com?
 
-* Original gitpod/drupalpod replacement for contribution
+* Gitpod/DrupalPod replacement for contribution
 * External machine, more flexibility, not dependent on laptop
 * Sharing and collaborating with others
 * AI in completely isolated environment
-* Security: It's definitely not going to reconfigure or compromise your laptop
-* Claude can run so many ways
+* Isolated from your laptop: nothing installed or reconfigured locally
+* Claude Code: terminal, VS Code, remote control, self-hosted runner
 * Geographical and network issues
 
 ---
 
 ## Getting Access
 
-Sign in with GitHub. You get in if you're a member of:
-
-* An organization that [sponsors DDEV](https://ddev.com/sponsor/) at $100+/month
-  * All members of org can sign in
+Sign in with GitHub. Members of any organization that [sponsors DDEV](https://ddev.com/sponsor/) at $100+/month can sign in.
 
 Otherwise, request access:
 
@@ -185,23 +183,32 @@ Windows: winget install Coder.Coder. `coder whoami` to check login.
 
 ---
 
-## Coder CLI: SSH
+## Coder CLI: `coder ssh`
 
 ```bash
-coder ssh my-site                       # interactive shell
-coder ssh my-site -- ddev list          # one command
-coder ssh -A my-site                    # forward your SSH agent
-
-coder config-ssh --yes                  # write ~/.ssh/config entries
-ssh coder.my-workspace
-scp dump.sql.gz coder.my-workspace:~/my-site/
-rsync -av ./files/ coder.my-workspace:~/my-site/web/sites/default/files/
+coder ssh my-site
+coder ssh my-site -- ddev list
+coder ssh -A my-site
 ```
-<!-- .element: style="font-size: 0.45em" -->
 
 Note:
-Host names are `coder.<workspace>`. Re-run `coder config-ssh` after creating new workspaces.
+First: interactive shell. Second: run one command. Third: forward your SSH agent.
 Port forward: coder port-forward my-site --tcp 3306:32789
+
+---
+
+## Coder CLI: Plain `ssh`
+
+```bash
+coder config-ssh --yes
+ssh coder.my-site
+scp dump.sql.gz coder.my-site:~/my-site/
+rsync -av ./files/ \
+  coder.my-site:~/my-site/web/sites/default/files/
+```
+
+Note:
+`coder config-ssh` writes ~/.ssh/config entries. Host names are `coder.<workspace>`. Re-run `coder config-ssh` after creating new workspaces.
 
 ---
 
@@ -216,6 +223,8 @@ coder ssh my-site -- env -C /home/coder/my-site \
 And back out:
 
 ```bash
+coder ssh my-site -- env -C /home/coder/my-site \
+  ddev export-db --file=backup.sql.gz
 scp coder.my-site:~/my-site/backup.sql.gz .
 ```
 
@@ -229,7 +238,7 @@ Any DDEV project, as many as you want
 
 ## A Basic Website
 
-Create a workspace named `hello` from [the freeform template](https://coder.ddev.com/templates/coder/freeform/workspace?mode=manual), then:
+Create a workspace named `hello` from [the freeform template](https://coder.ddev.com/templates/coder/freeform/workspace?mode=manual) with **DDEV project names** set to `hello`, then:
 
 ```bash
 mkdir -p ~/hello/public && cd ~/hello
@@ -247,6 +256,8 @@ Click the "hello" app button or run `ddev launch`. Note: *.ddev.site URLs don't 
 ---
 
 ## Bring Your Own Project
+
+Add `my-site` to the **DDEV project names** parameter, then:
 
 ```bash
 git clone https://github.com/your-org/my-site.git ~/my-site
@@ -353,10 +364,12 @@ Can't be combined with remote control. Runner rewrites ~/.gitconfig before each 
 
 ---
 
-## Contribution
+## Contributing to coder-ddev
 
-* Contributing is easy and AI knows how to do it, there are good models to follow and good docs. You can fix an annoyance.
-* The PR build gives you links to the things you need to be able to see the changes in your PR
+* Repo: [github.com/ddev/coder-ddev](https://github.com/ddev/coder-ddev)
+* Fix an annoyance: good docs and existing code to follow
+* AI tools handle it well
+* Each PR build posts links for checking your changes
 
 ---
 

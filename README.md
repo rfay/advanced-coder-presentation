@@ -1,4 +1,4 @@
-# Advanced Coder.ddev.com Usage
+# Advanced coder.ddev.com Usage
 
 A [reveal.js](https://revealjs.com/) presentation on using [coder.ddev.com](https://coder.ddev.com): Drupal contribution, workspace access, the freeform template, and Claude Code.
 
